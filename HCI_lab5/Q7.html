@@ -13,11 +13,10 @@
 
             $("button").click(function () {
                 $.each($("img") , function (key,value) {
-                    var img = $("img:eq("+key+")");
-                    var pos = img.position();
+                    var pos = $(this).position();
                     var marginLeft = [0 , 50 , 0 , 50];
                     var marginTop = [0 , 0 , 50 , 50];
-                    img.animate({
+                    $(this).animate({
                         left: (divPos.left - pos.left + marginLeft[key]), top: (divPos.top - pos.top + marginTop[key]), opacity: '0.5'
                     }, 1000);
                 } )

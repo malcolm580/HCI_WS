@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>the title</title>
+    <script type="text/javascript"
+            src="jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("input:radio").click(function () {
+                $("#add").empty();
+                $("#add").append("Product Chosen:"+$(this).val());
+            })
+        })
+    </script>
+</head>
+<body>
+
+<input type="radio" name="r" value="a" >a
+<input type="radio" name="r" value="b"> b
+<input type="radio" name="r" value="c"> c
+<input type="radio" name="r" value="d"> d
+
+<p id="add"></p>
+
+</body>
+</html>
