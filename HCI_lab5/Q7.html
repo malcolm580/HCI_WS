@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="jquery/jquery.js"></script>
+    <script src="jquery/jquery-ui.js"> </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            var divPos = $("div").position();
+
+            $("button").click(function () {
+                $.each($("img") , function (key,value) {
+                    var img = $("img:eq("+key+")");
+                    var pos = img.position();
+                    var marginLeft = [0 , 50 , 0 , 50];
+                    var marginTop = [0 , 0 , 50 , 50];
+                    img.animate({
+                        left: (divPos.left - pos.left + marginLeft[key]), top: (divPos.top - pos.top + marginTop[key]), opacity: '0.5'
+                    }, 1000);
+                } )
+
+            })
+
+        })
+    </script>
+
+    <style>
+        img{
+            width:50px;
+            height:50px;
+            position:relative;
+        }
+
+        div{
+            background:green;
+            height:100px;
+            width:100px;
+            position:relative;
+        }
+    </style>
+
+</head>
+<body>
+    <button>Start Animation</button>
+    <div></div>
+    <br>
+    <img src="jquery-logo.jpg" id="j1" >
+    <br>
+    <img src="jquery-logo.jpg" id="j2" >
+    <br>
+    <img src="jquery-logo.jpg" id="j3" >
+    <br>
+    <img src="jquery-logo.jpg" id="j4" >
+</body>
+</html>

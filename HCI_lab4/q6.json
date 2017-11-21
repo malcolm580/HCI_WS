@@ -1,0 +1,9 @@
+[{
+  "Name": "Mary",
+  "Birthday": {"day":22, "month":8, "year": 1995},
+  "Sex": "female"
+},{
+  "Name": "John",
+  "Birthday": {"day":12, "month":2, "year": 1993},
+  "Sex": "male"
+}]

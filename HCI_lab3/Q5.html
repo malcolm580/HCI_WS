@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q5</title>
+
+    <style type="text/css">
+        body{margin:10px;}
+        #div1 { border:1px solid;height:200px;width:200px;background-color:green;}
+        #div2 { border:1px solid;height:200px;width:200px;background-color:yellow;}
+    </style>
+
+    <script src="jquery/jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            var greenBox = $("#div1");
+            var yellowBox = $("#div2");
+            var product = $("#product");
+
+            $("#append").click(function () {
+                var optionOneValue = product.children(["option:first"]).val();
+                var selectedValue = product.val();
+                if( selectedValue != optionOneValue ){
+                    greenBox.append(selectedValue + "<br />");
+                }
+            });
+
+            $("#prepend").click(function () {
+                var optionOneValue = product.children(["option:first"]).val();
+                var selectedValue = product.val();
+                if( selectedValue != optionOneValue ){
+                    greenBox.prepend(selectedValue + "<br />");
+                }
+            });
+            
+            $("#clear").click(function () {
+                greenBox.empty();
+                yellowBox.empty();
+            });
+
+            $("#add").click(function () {
+                yellowBox.append(greenBox.html());
+                greenBox.empty();
+            });
+
+            $("#move").click(function () {
+                yellowBox.empty();
+                yellowBox.append(greenBox.html());
+                greenBox.empty();
+            });
+
+        })
+    </script>
+</head>
+<body>
+
+<center>
+    <input type="button" id="append" value="Product append to Last" />
+    <select id="product">
+        <option value="white">Choose product</option>
+        <option value="Desktop">Desktop</option>
+        <option value="Notebook">Notebook</option>
+        <option value="iPad">iPad</option>
+        <option value="iPhone">iPhone</option>
+        <option value="Tablet">Tablet</option>
+    </select>
+    <input type="button" id="prepend" value="Product append to Top" />
+    <input type="button" id="clear" value="Clear All" />
+    <input type="button" id="add" value="Add to Shopping Cart" /><br />
+    <input type="button" id="move" value="Move to Shopping Cart" /><br />
+    <p>Append Product Below:</p>
+    <div id="div1"></div><br/>
+    <p>Shopping Cart: </p>
+    <div id="div2"></div>
+</center>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="jquery/jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $.getJSON("q2.json",function (json) {
+                    var target = $("div");
+                    target.html('<p> Name: ' + json.Name + '</p>');
+                    target.append('<p>Age : ' + json.Age+ '</p>');
+                    target.append('<p> Sex: ' + json.Sex+ '</p>');
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>Click on the button to load the record</h1>
+    <div style="background-color: pink">&nbsp;</div>
+    <button>Load Data</button>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q3</title>
+
+    <style>
+        div {
+            margin: 10px;
+            padding:12px;
+            border:2px solid #666 ;
+            width: 60px;
+        }
+
+        #resul{
+            margin: 10px;
+            padding:12px;
+            border:2px solid #555 ;
+            width: 110px;
+        }
+
+        #start {
+            margin: 10px;
+            padding:12px;
+            border:2px solid #666 ;
+            width: 110px;
+        }
+    </style>
+
+    <script src="jquery/jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("div").appendTo($("#resul"));
+
+//            $("div").click(function () {
+//
+//                var parent = $(this).parent().attr('id');
+//
+//               if(parent == 'start'){
+//                   $(this).appendTo($("#resul"));
+//               }else{
+//                   $(this).appendTo($("#start"));
+//               }
+//
+//            });
+
+            $("body").on("click","#resul div", function () {
+                $(this).appendTo($("#start"));
+            });
+
+            $("body").on("click","#start div", function () {
+                $(this).appendTo($("#resul"));
+            });
+
+            $("#reset").click(function () {
+                $("div").appendTo($("#start"));
+            });
+        })
+    </script>
+
+</head>
+<body>
+    <p>Click on any color blocks you like:</p>
+    <p id="resul">Shopping Cart</p>
+    <p id="start">Choose items</p>
+    <hr>
+    <div style="background-color: blue "></div>
+    <div style="background-color: green "></div>
+    <div style="background-color: red "></div>
+    <div style="background-color: purple "></div>
+    <div style="background-color: brown "></div>
+    <button id="reset">Reset</button>
+</body>
+</html>

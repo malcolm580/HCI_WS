@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q2</title>
+    <script src="jquery/jquery.js"></script>
+    <script>
+        $(document).ready( function () {
+            $("ul").filter(".red").addClass("selected_red");
+            $("ul").filter(".blue").addClass("selected_blue");
+            $("ul").hide();
+            $("#Apple").click(function () {
+                $("ul").hide();
+                $("ul").filter(".red").show();
+            });
+            $("#Samsung").click(function () {
+                $("ul").hide();
+                $("ul").filter(".blue").show();
+            })
+
+        });
+    </script>
+    <style>
+        .selected_red {
+            color:red;
+        }
+        .selected_blue {
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <button id="Apple">Apple</button>
+    <button id="Samsung">Samsung</button>
+    <ul class="red">
+        <li>iPhone</li>
+        <li>iPad</li>
+        <li>iPod</li>
+    </ul>
+    <ul class="blue">
+        <li>Galaxy Tab</li>
+        <li>Galaxy Note</li>
+        <li>Galaxy S3</li>
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q4</title>
+    <script src="jquery/jquery.js"></script>
+
+    <style type="text/css">
+        body{
+            margin:0px;
+        }
+        #div1 {
+            border:1px solid;
+            height:200px;width:200px;
+            background-color:#2AFFAA;
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+
+            var greenBox =  $("#div1");
+            var product = $("#product");
+
+            $("#append").click(function () {
+                var optionOneValue = product.children(["option:first"]).val();
+                var selectedValue = product.val();
+                if( selectedValue != optionOneValue ){
+                    greenBox.append(selectedValue + "<br />");
+                }
+            });
+
+            $("#prepend").click(function () {
+                var optionOneValue = product.children(["option:first"]).val();
+                var selectedValue = product.val();
+                if( selectedValue != optionOneValue ){
+                    greenBox.prepend(selectedValue + "<br />");
+                }
+            });
+
+            $("#reset").click(function () {
+                greenBox.empty();
+            });
+
+        })
+    </script>
+    
+</head>
+<body>
+
+<button id="append">Product append to last</button>
+<select id="product">
+    <option value="white">Choose product</option>
+    <option value="Desktop">Desktop</option>
+    <option value="Notebook">Notebook</option>
+    <option value="iPad">iPad</option>
+    <option value="iPhone">iPhone</option>
+    <option value="Tablet">Tablet</option>
+</select>
+<button id="prepend">Product append to top</button>
+<br>
+<button id="reset">Clear All</button>
+
+<div id="div1"></div>
+
+</body>
+</html>

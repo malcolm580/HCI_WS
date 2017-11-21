@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src=jquery-1.6.js></script>
+  <script>
+    $(document).ready(function() {
+        var string = "";
+        $("li").each(function(index) {
+          string += $(this).text();
+        });
+        alert(string);
+      }
+    );
+
+  </script>
+</head>
+
+<body>
+  <ol>
+    <li>This is the first item.</li>
+    <li>This is the second item.</li>
+    <li>This is the third item.</li>
+  </ol>
+
+</body>
+
+</html>

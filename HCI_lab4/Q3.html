@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="jquery/jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $.getJSON("q3.json",function (json) {
+                    var target = $("div");
+                    var len = Object.keys(json).length;
+                    var string = "<table cellpadding=20 border=0><tr><td>Stud_ID</td><td>Name</td><td>LastName</td><td></td><td>Age</td><td>Sex</td></tr>";
+
+
+                    for (var i=0 ; i < json.Name.length ; i++){
+                        string += "<tr><td>"+json.Stud_ID[i] + "</td><td>" + json.Name[i] + "</td><td>" +json.LastName[i] + "</td><td></td><td>" +json.Age[i] + "</td><td>" +json.Sex[i] + "</td></tr>";
+                    }
+
+                    string += "</table>";
+                    target.html(string);
+//                    target.append(json.Stud_ID[1] + "\t" + json.Name[1] + "\t" +json.LastName[1] + "\t\t" +json.Age[1] + "\t" +json.Sex[1] + "\n"  );
+//                    target.append(json.Stud_ID[2] + "\t" + json.Name[2] + "\t" +json.LastName[2] + "\t\t" +json.Age[2] + "\t" +json.Sex[2] + "\n"  );
+//                    target.append(json.Stud_ID[3] + "\t" + json.Name[3] + "\t" +json.LastName[3] + "\t\t" +json.Age[3] + "\t" +json.Sex[3] + "\n"  );
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>Click on the button to load the record</h1>
+    <div style="background-color: pink">&nbsp;</div>
+    <button>Load Data</button>
+</body>
+</html>

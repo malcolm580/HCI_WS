@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="jquery/jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $.getJSON("q4.json",function (json) {
+                    var target = $("div");
+                    var len = Object.keys(json).length;
+                    var string = "<table border=1><tr><td>Stud_ID</td><td>Name</td><td>LastName</td><td>Age</td><td>Sex</td></tr>";
+
+                    for (var i=0 ; i < json.Name.length ; i++){
+                        string += "<tr><td>"+json.Stud_ID[i] + "</td><td>" + json.Name[i] + "</td><td>" +json.LastName[i] + "</td><td>"+ json.Age[i] +" </td><td>" +json.Sex[i] + "</td></tr>";
+                    }
+                    
+                    string += "</table>";
+                    target.html(string);
+
+                    $("tr:eq(0)").css("background-color","green");
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>Click on the button to load the record</h1>
+    <div style="background-color: pink">&nbsp;</div>
+    <button>Load Data</button>
+</body>
+</html>

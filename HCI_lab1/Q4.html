@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="jquery-1.6.js"></script>
+  <script>
+    
+    $(document).ready(
+      function() {
+        $(".class1").hide();
+        $(".class2").hide();
+        $("#button1").click(function() {
+          $(".class1").show();
+          $(".class2").hide();
+        });
+        $("#button2").click(function() {
+          $(".class2").show();
+          $(".class1").hide();
+        });
+      }
+    );
+
+  </script>
+</head>
+
+<body>
+  <button id=button1>Show first 3 items</button>
+  <button id=button2>Show last 3 items</button>
+  <div>
+    <p class="class1">Item 1</p>
+    <p class="class1">Item 2</p>
+    <p class="class1">Item 3</p>
+    <p class="class2">Item 4</p>
+    <p class="class2">Item 5</p>
+    <p class="class2">Item 6</p>
+  </div>
+
+</body>
+
+</html>

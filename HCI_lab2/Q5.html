@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="jquery/jquery.js"> </script>
+
+    <script>
+        $(document).ready(function(){
+            var content = $("table").html();
+
+            $("input:text").keyup(function () {
+                $("table").html(content);
+                var searchFilter = $("input:text").val();
+                $("tr:gt(0)").hide();
+                $("tr:gt(0):contains("+ searchFilter + ")").show();
+            });
+        });
+
+
+    </script>
+
+    <style type="text/css">
+        body, td {
+            font-size: 10pt;
+        }
+
+        table {
+            background-color: black;
+            border: 1px black solid;
+            border-collapse: collapse;
+        }
+
+        th {
+            border: 1px outset silver;
+            background-color: maroon;
+            color: white;
+        }
+
+        tr {
+            background-color: white;
+            margin: 1px;
+        }
+
+        tr:nth-child(odd)  {
+            background-color: coral;
+        }
+
+        td {
+            padding: 1px 8px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+Filter: <input type="text">
+
+<table>
+    <tr>
+        <th>No</th>
+        <th>Language</th>
+        <th>Price</th>
+    </tr>
+    <tr>
+        <td>001</td>
+        <td>C#</td>
+        <td>7500</td>
+    </tr>
+    <tr>
+        <td>002</td>
+        <td>Java</td>
+        <td>7000</td>
+    </tr>
+    <tr>
+        <td>003</td>
+        <td>C</td>
+        <td>6000</td>
+    </tr>
+    <tr>
+        <td>004</td>
+        <td>C++</td>
+        <td>6500</td>
+    </tr>
+    <tr>
+        <td>005</td>
+        <td>PHP</td>
+        <td>5000</td>
+    </tr>
+    <tr>
+        <td>006</td>
+        <td>Jquery</td>
+        <td>9000</td>
+    </tr>
+    <tr>
+        <td>007</td>
+        <td>HTML5</td>
+        <td>8000</td>
+    </tr>
+    <tr>
+        <td>008</td>
+        <td>VBasic</td>
+        <td>6500</td>
+    </tr>
+</table>
+
+
+
+</body>
+</html>

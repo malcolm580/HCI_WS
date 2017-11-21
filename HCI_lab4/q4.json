@@ -1,0 +1,7 @@
+{
+  "Stud_ID": ["1111", "2222" , "3333" , "4444"],
+  "Name": ["Mary" , "Peter" , "David" , "John"],
+  "LastName": ["Chan","Wong" , "Cheung" , "Leung"],
+  "Age": ["22","21" , "19" , "20" ],
+  "Sex": ["female","male","male","male"]
+}

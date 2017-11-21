@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<h1>Users Survey</h1>
+	<form oninput="output1.value=slider1.value ">
+		<p>
+			<label for="name">Name:</label>
+			<input type="text" id="name" placeholder="Chan Tai Man" />
+		</p>
+		<p>
+			<input type="checkbox" id="mem" />
+			<label for="mem">I'm a member</label>
+		</p>
+		<p>
+			<label for="pass">Password</label>
+			<input type="password" id="pass" />
+		</p>
+		<p>
+			<label for="pro">What;s your favourite products?</label>
+			<input list="prolist" type="text" id="pro" name="pro" />
+			<datalist id="prolist">
+				<option label="Mobile Phone" value="Mobile" />
+				<option label="Desktop (PC)" value="PC" />
+				<option label="Notebook" value="Notebook" />
+				<option label="Tablet" value="Tablet" />
+			</datalist>
+		</p>
+		<p>
+			1<input type="range" id="slider1" min="1" max="100" value="50">
+			<output id="output1">50</output>
+		</p>
+		<p>
+			Your score on product : <progress id="progress1" value="50" max="100" style="width:500px" ><span>45</span>% complete</progress>
+		</p>
+
+		<p>
+			<input type="number" id="number1" value="50" min="0" max="100"  />
+		</p>
+		<p>
+			Your score on service : <meter id="meter1" value="50" min="0" max="100" low="40" high="75" optimum="65" style="width:500px" ></meter>
+		</p>
+	</form>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#number1').on('change',function() {
+				$('#meter1').animate({
+					value: $('#number1').val()
+				}, 1000);
+			});
+			$('#slider1').on('change',function() {
+				$('#progress1').animate({
+					value: $('#slider1').val()
+				}, 1000);
+			});
+		});
+	</script>
+</body>
+</html>

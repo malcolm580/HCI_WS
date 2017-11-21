@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            height: 300px;
+            width: 300px;
+        }
+    </style>
+    <script src="jquery/jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                var div = $("div");
+//                h1.hide();
+//                h1.html("Change to the second text");
+                div.animate({
+                    opacity: 0.25,
+                    left: "+=100"
+                }, 500,"linear",  function() {
+                    alert("finished!");
+                });
+
+            })
+        })
+    </script>
+</head>
+<body>
+<button>Start Animation</button>
+<p>Moving the square!</p>
+<div style="background:green;
+         left:10px; top:100px;
+         height:100px;width:100px;
+         position:absolute;">
+</div>
+
+</body>
+</html>

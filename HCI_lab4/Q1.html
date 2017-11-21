@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        #span1 {
+            background-color: pink;
+        }
+
+        #span2 {
+            background-color: yellow;
+        }
+
+        #container{
+            display: flex;
+        }
+    </style>
+
+    <script src="jquery/jquery.js"></script>
+    
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("#span1").load("result1.html");
+                $("#span1").css("background-color","pink");
+                $("#span2").load("result2.html");
+            })
+        })
+    </script>
+
+</head>
+<body>
+    <h1>Click on the button to load result.html file:</h1>
+    <div id="container">
+        <div id="span1">STAGE 1</div>
+        <div id="span2">STAGE 2</div>
+    </div>
+    <button>Load Data</button>
+</body>
+</html>

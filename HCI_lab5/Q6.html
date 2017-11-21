@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            height: 300px;
+            width: 300px;
+        }
+    </style>
+    <script src="jquery/jquery.js"></script>
+    <script src="jquery/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function () {
+            var div = $("div");
+            $("#shake").click(function () {
+                div.effect( "shake", {times:2}, 1000 );
+            });
+            $("#fold").click(function () {
+                div.hide( "fold" , {horizFirst: true}, 2000 );
+                div.show( "fold" , {horizFirst: true}, 2000 );
+            });
+            $("#explode").click(function () {
+                div.hide( "explode", {pieces: 4 }, 2000 );
+                div.show( "explode", {pieces: 4 }, 2000 );
+            });
+            $("#right").click(function () {
+                div.animate({
+                    opacity: "toggle",
+                    left: "+=100"
+                }, 500);
+            });
+            $("#move").click(function () {
+                var position = div.position();
+                div.animate({
+                    left: $( window ).width()-100,
+                    top : "0"
+                }, 500 );
+                div.animate({
+                    left : position.left,
+                    top : position.top
+                },500)
+            });
+        })
+    </script>
+</head>
+<body>
+    <button id="move" >Moving</button>
+    <button id="shake">Shake</button>
+    <button id="fold">Fold</button>
+    <button id="explode">Explode</button>
+    <button id="right">Right</button>
+
+    <p>Moving the square! </p>
+    <div style="background:green;
+             left:10px; top:130px;
+             height:100px;width:100px;position:absolute;">
+    </div>
+</body>
+</html>

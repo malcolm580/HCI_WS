@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            height: 300px;
+            width: 300px;
+        }
+    </style>
+    <script src="jquery/jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("div").click(function () {
+                var h1 = $("h1");
+                h1.hide();
+                h1.html("Change to the second text");
+                h1.fadeIn(3000);
+            })
+        })
+    </script>
+</head>
+<body>
+    <div>
+        <h1>This is the first text</h1>
+    </div>
+</body>
+</html>
