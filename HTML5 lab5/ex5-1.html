@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <h1>5 students marks average</h1>
+  <form onKeyUp="x.value=(parseInt(a.value)+parseInt(b.value)+parseInt(c.value)+parseInt(d.value)+parseInt(e.value))/5">
+    <input type="number" id="a" value="50" min='0' max='100' onKeyUp="if(this.value>100){this.value='100';}else if(this.value<0){this.value='0';}"><br/>
+    <input type="number" id="b" value="50" min='0' max='100' onKeyUp="if(this.value>100){this.value='100';}else if(this.value<0){this.value='0';}"><br/>
+    <input type="number" id="c" value="50" min='0' max='100' onKeyUp="if(this.value>100){this.value='100';}else if(this.value<0){this.value='0';}"><br/>
+    <input type="number" id="d" value="50" min='0' max='100' onKeyUp="if(this.value>100){this.value='100';}else if(this.value<0){this.value='0';}"><br/>
+    <input type="number" id="e" value="50" min='0' max='100' onKeyUp="if(this.value>100){this.value='100';}else if(this.value<0){this.value='0';}"><br/>
+    <br/> Average : <output name="x" for="a b c d e">0</output>
+  </form>
+</body>
+
+</html>

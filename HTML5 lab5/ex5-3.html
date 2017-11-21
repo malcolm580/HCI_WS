@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#head{
+	background-color:lightgreen;
+	border-style: solid;
+	border-width: 1px;
+}
+form{
+	background-color:yellow;
+	border-style: solid;
+	border-width: 1px;
+}
+</style>
+</head>
+<body>
+	<h1>BMI Calculator</h1>
+	<div id="head">
+		<input type='radio' value='kg' id='weight' name='weight'/> kg<br/>
+		<input type='radio' value='lb' id='weight' name='weight'/> lb<br/>
+	</div>
+	<form id="kg" oninput="x.value=(parseInt(wf.value)/(parseInt(cm.value)*parseInt(cm.value)/10000))">
+		<label for='wf'>Weight = </label><input type="number" id="wf" value='50' min='0' /> kg</output><br/>
+		<label for='cm'>Height = </label><input type="number" id="cm" value='150' min='0' /> cm<br/> 
+		BMI = <output name="x" for="wf cm">0</output>
+	</form>
+	
+	<form id="lb" oninput="x.value=(parseInt(wf.value)/2.2)/(parseInt(cm.value)*parseInt(cm.value)/10000)">
+		<label for='wf'>Weight = </label><input type="number" id="wf" value='50' min='0' /> lb</output><br/>
+		<label for='cm'>Height = </label><input type="number" id="cm" value='150' min='0' /> cm<br/> 
+		BMI = <output name="x" for="wf cm">0</output>
+	</form>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('form').hide();
+			$('input[name=weight]').on('change',function() {
+				var va = $('input[name=weight]:checked').val();
+				$('form').hide();
+				$('form#'+va).show();
+			});
+			
+		});
+	</script>
+</body>
+
+</html>
+

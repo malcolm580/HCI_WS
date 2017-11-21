@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <h1>BMI Calculator</h1>
+  <form oninput="x.value=(parseInt(kg.value)/(parseInt(cm.value)*parseInt(cm.value)/10000))">
+    <label for='kg'>Weight = </label><input type="number" id="kg" value='50' min='0' /> kg<br/>
+    <label for='cm'>Height = </label><input type="number" id="cm" value='150' min='0' /> cm<br/> 
+    BMI = <output name="x" for="kg cm">0</output>
+  </form>
+</body>
+
+</html>
