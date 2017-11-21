@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
-    <script src="jquery/jquery.js"></script>
+    <script src="../jquery.js"></script>
     <script>
         $(document).ready(function () {
             $("button").click(function () {
@@ -16,7 +16,7 @@
                     for (var i=0 ; i < json.Name.length ; i++){
                         string += "<tr><td>"+json.Stud_ID[i] + "</td><td>" + json.Name[i] + "</td><td>" +json.LastName[i] + "</td><td>"+ json.Age[i] +" </td><td>" +json.Sex[i] + "</td></tr>";
                     }
-                    
+
                     string += "</table>";
                     target.html(string);
 
